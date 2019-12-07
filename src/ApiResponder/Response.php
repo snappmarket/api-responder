@@ -22,4 +22,40 @@ class Response extends WhiteHouseResponse
 
         return parent::success($results, $completeMetadata);
     }
+
+
+
+    /**
+     * Returns an error response for the client errors based on the specified error code.
+     *
+     * @param string $errorCode
+     * @param array  $replaces
+     * @param array  $errors
+     *
+     * @return array
+     */
+    public function clientError(string $errorCode, array $replaces = [], $errors = [])
+    {
+        $parentResult = parent::clientError($errorCode, $replaces);
+
+        return array_merge($parentResult, compact('errors'));
+    }
+
+
+
+    /**
+     * Returns an error response for the server errors based on the specified error code.
+     *
+     * @param string $errorCode
+     * @param array  $replaces
+     * @param array  $errors
+     *
+     * @return array
+     */
+    public function serverError(string $errorCode, array $replaces = [], $errors = [])
+    {
+        $parentResult = parent::serverError($errorCode, $replaces);
+
+        return array_merge($parentResult, compact('errors'));
+    }
 }
