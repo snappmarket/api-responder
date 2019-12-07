@@ -3,6 +3,7 @@
 namespace SnappMarket\ApiResponder;
 
 
+use Emyoutis\WhiteHouseResponder\ErrorsRepository;
 use Illuminate\Support\ServiceProvider;
 
 class ApiResponderServiceProvider extends ServiceProvider
@@ -35,5 +36,14 @@ class ApiResponderServiceProvider extends ServiceProvider
         $this->app->singleton('snappmarket.response', function () {
             return app()->make(Response::class);
         });
+
+        $this
+             ->app
+             ->when(Response::class)
+             ->needs(ErrorsRepository::class)
+             ->give(function () {
+                 return app('whitehouse.errors');
+             })
+        ;
     }
 }
