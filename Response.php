@@ -58,4 +58,22 @@ class Response extends WhiteHouseResponse
 
         return array_merge($parentResult, compact('errors'));
     }
+
+
+    /**
+     * Returns an error response for the errors based on the specified error code and status.
+     *
+     * @param string $errorCode
+     * @param int    $status
+     * @param array  $replaces
+     * @param array  $errors
+     *
+     * @return array
+     */
+    public function error(string $errorCode, int $status, array $replaces = [], $errors = [])
+    {
+        $parentResult = parent::error($errorCode, $status, $replaces);
+
+        return array_merge($parentResult, compact('errors'));
+    }
 }
