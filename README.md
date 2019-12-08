@@ -2,7 +2,7 @@
 
 This package provides some tools to generate API responses based on the [White House Standards](https://github.com/WhiteHouse/api-standards)  and some customization for SnappMarket team in Laravel.
 
-:bulb: To start over, please read  [this document](https://github.com/emyoutis).
+:bulb: To start over, please read  [this document](https://github.com/emyoutis/laravel-whitehouse-responder).
 
 ## Installation
 ```
