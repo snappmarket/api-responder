@@ -14,5 +14,16 @@
     },
     "require": {
         "emyoutis/laravel-whitehouse-responder": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SnappMarket\\ApiResponder\\ApiResponderServiceProvider"
+            ],
+            "aliases": {
+                "WhiteHouseResponderResponse": "SnappMarket\\ApiResponder\\Facades\\Response",
+                "WhiteHouseResponderErrors": "SnappMarket\\ApiResponder\\Facades\\ErrorsRepository"
+            }
+        }
     }
 }
