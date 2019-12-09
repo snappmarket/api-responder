@@ -1,6 +1,7 @@
 {
     "name": "snappmarket/api-responder",
     "description": "API Responder in SnappMarket's Way",
+    "license": "MIT",
     "authors": [
         {
             "name": "EmiTis Yousefi",
